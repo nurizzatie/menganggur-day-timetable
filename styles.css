@@ -1,0 +1,174 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('pastelBg.jpg');
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+}
+
+h1 {
+    font-family: 'Sriracha', cursive;
+    color: #FF8A8A;
+    text-shadow: 3px 3px 3px #515151;
+    font-size: 45px;
+}
+
+.clock-container {
+    position: relative;
+    width: 500px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.clock {
+    width: 450px;
+    height: 450px;
+    border-style: solid;
+    border-width: 20px;
+    border-color: #FF8A8A;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.clock-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+.hour-mark {
+    position: absolute;
+    width: 30px;
+    left: calc(50% - 15px);
+    top: 10px;
+    text-align: center;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: bold;
+    font-size: 14px;
+    transform-origin: center 215px;
+}
+
+.moon {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+.cats {
+    position: absolute;
+    top: 63%; 
+    left: 80%; 
+    transform: translateX(-50%);
+}
+
+.kdrama {
+    position: absolute;
+    top: 75%; 
+    left: 40%; 
+    transform: translateX(-50%);
+}
+
+.freetime {
+    position: absolute;
+    top: 42%;
+    left: 18%;
+    transform: translateX(-50%);
+}
+
+.divider {
+    position: absolute;
+    width: 1px;
+    height: 190px;
+    background-color: #EBC49F;
+    transform-origin: bottom center;
+    bottom: 50%;
+    left: calc(50% - 0.5px);
+}
+
+.divider::after {
+    content: attr(data-activity);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    background-color: #624E88;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 25%;
+    transform: translateX(-50%) rotate(150deg);
+}
+
+.minute-hand {
+    width: 2px;
+    height: 40%;
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: #CDC1FF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.unit {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    text-align: center;
+    transform: rotate(calc(15deg * var(--i))) translateY(var(--label-offset)) rotate(var(--label-rotation));
+    white-space: nowrap;
+    font-size: 12px;
+    color: black;
+    z-index: 1;
+    /* Ensure labels are on top of lines */
+}
+
+.center {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
